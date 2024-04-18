@@ -4,7 +4,7 @@
   "description": "Pit Assistance Computer (PAC) is a TV assistance for the pit crew at an FRC Event. Notifying when matches are queuing and on field. Also displaying team ranking and sponsors.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "tailwind": "npx tailwindcss -i ./public/assets/css/index.css -o ./public/assets/css/index-tailwind.css"
   },
   "repository": {
@@ -18,8 +18,13 @@
   },
   "homepage": "https://github.com/Aviator2276/PAC#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.2.0",
+    "http-status-codes": "^2.3.0",
+    "superagent": "^8.1.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.0",
