@@ -1,0 +1,31 @@
+{
+    "eventRanks": [
+        {
+            "rank": 1,
+            "teamNumber": 4189,
+            "rankScore": 3.55,
+            "wins": 10,
+            "losses": 1,
+            "ties": 0
+        },
+        {
+            "rank": 2,
+            "teamNumber": 3525,
+            "rankScore": 3.50,
+            "wins": 9,
+            "losses": 2,
+            "ties": 0
+        }
+    ]
+}
+{
+    "districtRanks": [
+        {
+            "rank": 1,
+            "teamNumber": 4189,
+            "totalPoints": 245,
+            "qualifiedDCMP": true,
+            "qualifiedFCMP": true
+        }
+    ]
+}

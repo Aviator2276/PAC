@@ -6,7 +6,7 @@ const {
     getDistrictRanking,
 } = require('../controllers/rank');
 
-router.route('/event/:season').get(getEventRanking);
-router.route('/district/:season').get(getDistrictRanking);
+router.route('/event/:season/:eventCode').get(getEventRanking);
+router.route('/district/:season/:districtCode').get(getDistrictRanking);
 
 module.exports = router;

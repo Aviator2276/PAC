@@ -16,6 +16,7 @@ Get Spotify API
 //const authRouter = require('./routes/auth');
 const scheduleAPI = require('./routes/schedule');
 const rankAPI = require('./routes/rank');
+const teamAPI = require('./routes/team');
 
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -26,6 +27,7 @@ app.use(express.json());
 //app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/schedule', scheduleAPI);
 app.use('/api/v1/rank', rankAPI);
+app.use('/api/v1/team-info', teamAPI);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
