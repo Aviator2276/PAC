@@ -9,17 +9,17 @@ const getEventRanking = async (req, res) => {
     const eventCode = req.params.eventCode;
     const season = req.params.season;
 
-    const apiRes = await superagent
+    const APIRes = await superagent
         .get(`${FRC_BASEURL}/${season}/rankings/${eventCode}`)
         .set('authorization', 'Basic ' + apiKey)
         .set('cache-control', 'no-cache')
         .set('accept', 'json');
-    if (apiRes.error) {
-        throw new BadRequestError(apiRes.error);
+    if (APIRes.error) {
+        throw new BadRequestError(APIRes.error);
     }
 
-    let response = {"eventRanks": []}
-    apiRes.body.Rankings.forEach((rank) => {
+    const response = {"eventRanks": []}
+    APIRes.body.Rankings.forEach((rank) => {
         response.eventRanks.push({
             "rank": rank.rank,
             "teamNumber": rank.teamNumber,
@@ -38,7 +38,7 @@ const getDistrictRanking = async (req, res) => {
 
     const season = req.params.season;
     const districtCode = req.params.districtCode;
-    let response = {"districtRanks": []}
+    const response = {"districtRanks": []}
     let pageTotal = 1;
 
     for (page = 1; page <= pageTotal; page++) {
@@ -46,17 +46,17 @@ const getDistrictRanking = async (req, res) => {
         queryParams.push(`districtCode=${districtCode}`);
         queryParams.push(`page=${page}`);
         const queryString = queryParams.length ? `?${queryParams.join('&')}` : '';
-        const apiRes = await superagent
+        const APIRes = await superagent
             .get(`${FRC_BASEURL}/${season}/rankings/district${queryString}`)
             .set('authorization', 'Basic ' + apiKey)
             .set('cache-control', 'no-cache')
             .set('accept', 'json');
-        if (apiRes.error) {
-            throw new BadRequestError(apiRes.error);
+        if (APIRes.error) {
+            throw new BadRequestError(APIRes.error);
         }
 
-        pageTotal = apiRes.body.pageTotal;
-        apiRes.body.districtRanks.forEach((rank) => {
+        pageTotal = APIRes.body.pageTotal;
+        APIRes.body.districtRanks.forEach((rank) => {
             response.districtRanks.push({
                 "rank": rank.rank,
                 "teamNumber": rank.teamNumber,

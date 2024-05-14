@@ -2,9 +2,11 @@ const express = require('express');
 
 const router = express.Router();
 const {
-    getAllMatch,
+    getMatchSchedule,
 } = require('../controllers/schedule');
 
-router.route('/:season').get(getAllMatch);
+router.route('/matches/:season/:eventCode').get(getMatchSchedule);
+//router.route('/validate').post()
+//router.route('/match-notification').get()
 
 module.exports = router;

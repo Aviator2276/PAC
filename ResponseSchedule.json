@@ -1,0 +1,24 @@
+{
+    "Schedule": [
+        {
+            "matchNumber": 1,
+            "description": "Qualification 1",
+            "tournamentLevel": "Qualification",
+            "redAlliance": [
+                {
+                    "teamNumber": 4189,
+                    "station": 1
+                }
+            ],
+            "blueAlliance": [
+                {
+                    "teamNumber": 2355,
+                    "station": 1
+                }
+            ],
+            "expectedTime": 1711226478,
+            "predictedTime": 1711226478,
+            "actualTime": 1711226478
+        }
+    ]
+}

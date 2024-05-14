@@ -12,17 +12,17 @@ const getTeamInfo = async (req, res) => {
     if (teamNumber > 0) queryParams.push(`teamNumber=${teamNumber}`);
     const queryString = queryParams.length ? `?${queryParams.join('&')}` : '';
 
-    const apiRes = await superagent
+    const APIRes = await superagent
         .get(`${FRC_BASEURL}/${season}/teams${queryString}`)
         .set('authorization', 'Basic ' + apiKey)
         .set('cache-control', 'no-cache')
         .set('accept', 'json');
-    if (apiRes.error) {
-        throw new BadRequestError(apiRes.error);
+    if (APIRes.error) {
+        throw new BadRequestError(APIRes.error);
     }
 
-    let response = {"Teams": []}
-    apiRes.body.teams.forEach((team) => {
+    const response = {"Teams": []}
+    APIRes.body.teams.forEach((team) => {
         response.Teams.push({
             "teamNumber": team.teamNumber,
             "nameShort": team.nameShort,
@@ -41,17 +41,17 @@ const getEventTeams = async (req, res) => {
     queryParams.push(`eventCode=${eventCode}`);
     const queryString = queryParams.length ? `?${queryParams.join('&')}` : '';
 
-    const apiRes = await superagent
+    const APIRes = await superagent
         .get(`${FRC_BASEURL}/${season}/teams${queryString}`)
         .set('authorization', 'Basic ' + apiKey)
         .set('cache-control', 'no-cache')
         .set('accept', 'json');
-    if (apiRes.error) {
-        throw new BadRequestError(apiRes.error);
+    if (APIRes.error) {
+        throw new BadRequestError(APIRes.error);
     }
 
-    let response = {"Teams": []}
-    apiRes.body.teams.forEach((team) => {
+    const response = {"Teams": []}
+    APIRes.body.teams.forEach((team) => {
         response.Teams.push({
             "teamNumber": team.teamNumber,
             "nameShort": team.nameShort,
