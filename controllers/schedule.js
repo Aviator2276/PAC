@@ -31,31 +31,23 @@ const getMatchSchedule = async (req, res) => {
     }
 
     const response = {"Schedule": []}
-    const tbaMatches = [];
+    const tbaMatchLookup = [];
     tbaAPIRes.body.forEach((match) => {
-        if (match.alliances.blue.team_keys.includes(`frc${teamNumber}`)) tbaMatches.push([ match.time, match.predicted_time, match.actual_time ]);
-        else if (match.alliances.red.team_keys.includes(`frc${teamNumber}`)) tbaMatches.push([ match.time, match.predicted_time, match.actual_time ]);
+        const teamKeys = match.alliances.blue.team_keys.concat(match.alliances.red.team_keys);
+        if (teamKeys.includes(`frc${teamNumber}`)) {
+            tbaMatchLookup[match.time] = [match.predicted_time, match.actual_time];
+        }
     });
     frcAPIRes.body.Schedule.forEach((match) => {
         const expectedTime = Math.floor(Date.parse(match.startTime) / 1000);
-        const predictedTime = tbaMatches.find(tbaMatch => tbaMatch[0] === expectedTime)?.[1];
-        const actualTime = tbaMatches.find(tbaMatch => tbaMatch[0] === expectedTime)?.[2];
-        console.log(predictedTime)
+        const [predictedTime, actualTime] = tbaMatchLookup[expectedTime] || [];
 
         response.Schedule.push({
             "matchNumber": match.matchNumber,
             "description": match.description,
             "tournamentLevel": match.tournamentLevel,
-            "redAlliance": [
-                match.teams[0].teamNumber,
-                match.teams[1].teamNumber,
-                match.teams[2].teamNumber,
-            ],
-            "blueAlliance": [
-                match.teams[3].teamNumber,
-                match.teams[4].teamNumber,
-                match.teams[5].teamNumber,
-            ],
+            "redAlliance": match.teams.slice(0, 3).map(team => team.teamNumber),
+            "blueAlliance": match.teams.slice(3).map(team => team.teamNumber),
             "expectedTime": expectedTime,
             "predictedTime": predictedTime,
             "actualTime": actualTime,

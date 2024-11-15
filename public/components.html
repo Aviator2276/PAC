@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head class="dark">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/Charging_Courses-Icon_Invisible.ico">
     <title>4189 Ranking</title>
 
     <link href="./assets/css/index-tailwind.css" rel="stylesheet">
     <script>let FF_FOUC_FIX;</script>
 </head>
-<body class="h-full bg-slate-100 dark:bg-slate-900 transition-colors">
+<body class="w-full h-full bg-slate-100 dark:bg-slate-900 transition-colors">
     <aside class="absolute bottom-4 right-4">
         <button type="button" id="darkModeSwitch" class="rounded-lg p-2 bg-emerald-800 hover:bg-emerald-600 text-slate-200">
             <svg xmlns="http://www.w3.org/2000/svg" id="darkModeIcon" fill="none" stroke-width="1.25" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 mx-auto transition-all group-hover:text-slate-100 text-slate-300">
@@ -17,9 +16,66 @@
             </svg>
         </button>
     </aside>
-    <main id="mainContent" class="ml-0">
-        <div class=" px-4 py-4 max-w-80">
-            <section class="m-2 md:m-4 p-4 text-center border rounded-lg shadow sm:p-8 bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700">
+    <main class="h-full grid grid-cols-4 grid-rows-12 p-4">
+        <div class="m-4 col-start-1 col-span-2 row-start-1 row-span-4">
+            <section class="p-4 h-full relative place-content-center text-center border rounded-lg 2k:rounded-xl shadow bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700">
+                <div class="absolute top-0 left-0">
+                    <span class="m-2 relative text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 border text-green-700 border-green-700 dark:text-green-400 dark:border-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 me-1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        <div>UP NEXT</div>
+                    </span>
+                    <div id="estimatedStartTime" class="hidden">
+                        Estimated Start Time: 11:23 PM
+                        <br>
+                        Predicted Start Time: 11:30 PM
+                    </div>
+                </div>
+                <h1 id="nextMatchDescription" class="m-2 text-6xl 2k:text-8xl font-bold text-slate-800 dark:text-slate-200">
+                    Qualification Match 34
+                    <br>
+                    <span class="m-2 text-2xl 2k:text-6xl font-bold inline-flex items-center px-2.5 py-0.5 rounded 2k:rounded-lg bg-slate-200 dark:bg-slate-800 border-2 2k:border-4 text-red-600 border-red-600 dark:text-red-500 dark:border-red-500">
+                        <div class="mx-2 mb-1 2k:mb-2">RED ALLIANCE</div>
+                    </span
+                </h1>
+                <div class="absolute bottom-0 left-0 right-0 grid grid-cols-2 text-2xl 2k:text-4xl font-mono text-slate-200">
+                    <div id="redAllianceTeams" class="py-4 grid grid-cols-3 rounded-l-lg bg-red-600">
+                        <div>
+                            4451
+                        </div>
+                        <div>
+                            5109
+                        </div>
+                        <div>
+                            4189
+                        </div>
+                    </div>
+                    <div id="blueAllianceTeams" class="py-4 grid grid-cols-3 rounded-r-lg bg-blue-600">
+                        <div>
+                            6944
+                        </div>
+                        <div>
+                            6712
+                        </div>
+                        <div>
+                            3635
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="mx-4 my-2 m col-start-1 col-span-2 row-span-1">
+            <section class="p-4 h-full text-center border rounded-lg shadow bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700">
+            </section>
+        </div>
+        
+        <div class="m-4 col-start-3 col-span-1 row-start-1 row-span-12">
+            <section class="p-4 h-full text-center border rounded-lg shadow bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700">
+            </section>
+        </div>
+        <div class="m-4 col-start-4 col-span-1 row-start-1 row-span-12">
+            <section class="p-4 h-full text-center border rounded-lg shadow bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700">
             </section>
         </div>
     </main>

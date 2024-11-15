@@ -1,24 +1,22 @@
 {
     "Schedule": [
         {
-            "matchNumber": 1,
-            "description": "Qualification 1",
-            "tournamentLevel": "Qualification",
+            "matchNumber": 4,
+            "description": "Match 4 (R1)",
+            "tournamentLevel": "Playoff",
             "redAlliance": [
-                {
-                    "teamNumber": 4189,
-                    "station": 1
-                }
+                4451,
+                5109,
+                4189
             ],
             "blueAlliance": [
-                {
-                    "teamNumber": 2355,
-                    "station": 1
-                }
+                6944,
+                6712,
+                3635
             ],
-            "expectedTime": 1711226478,
-            "predictedTime": 1711226478,
-            "actualTime": 1711226478
+            "expectedTime": 1711219020,
+            "predictedTime": 1711340149,
+            "actualTime": 1711218571
         }
     ]
 }
